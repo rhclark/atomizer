@@ -35,6 +35,7 @@ install:
   # - ps: (new-object net.webclient).DownloadFile($env:NUMPY_URL, 'c:\\numpy-1.9.3+mkl-cp27-none-win_amd64.whl')
   # - "%PYTHON%\\python.exe -m pip install --user c:\\numpy-1.9.3+mkl-cp27-none-win_amd64.whl"  
 
+
 branches:
   # whitelist
   only:

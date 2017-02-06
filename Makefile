@@ -17,9 +17,9 @@ all:
 
 ifeq ($(OS),Windows_NT)
 ifeq ($(shell uname -o),Cygwin)
-	python pyinstaller2/pyinstaller.py utils/sbmlTranslator.spec ;
+	python pyinstaller2/pyinstaller.py --onefile --windowed utils/sbmlTranslator.spec ;
 else
-	python pyinstaller2/pyinstaller.py utils/sbmlTranslator_windows.spec ;
+	python pyinstaller2/pyinstaller.py --onefile --windowed utils/sbmlTranslator_windows.spec ;
 endif
 else
 	virtualenv --no-site-packages venv

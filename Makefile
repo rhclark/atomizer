@@ -25,7 +25,7 @@ else
 	virtualenv --no-site-packages venv
 	source venv/bin/activate
 	pip install --user -r requirements.txt
-	python pyinstaller2/pyinstaller.py utils/sbmlTranslator.spec ;
+	python pyinstaller2/pyinstaller.py   --onefile --windowed   utils/sbmlTranslator.spec ;
 	deactivate
 endif
 

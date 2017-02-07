@@ -1,6 +1,7 @@
 networkx==1.9.1
 pexpect==3.3
 setuptools==19.2
+six
 lxml
 pyyaml
 python-libsbml

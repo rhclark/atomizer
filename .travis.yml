@@ -39,14 +39,14 @@ before_deploy:
 
  
 notifications:
-  slack: 
-    rooms:
-      - faederlab:l0waIGp58v8ZV74N7QmXGoWs
-    template:
-      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
-      - "NFsim build: %{result} in %{duration}"
-      - "To package NFsim, please make a small modification to BioNetGen:"
-      - "Goto: https://github.com/RuleWorld/bionetgen"
-      - "Build details:  %{build_url} "
+  slack:  faederlab:l0waIGp58v8ZV74N7QmXGoWs
+#    rooms:
+#      - faederlab:l0waIGp58v8ZV74N7QmXGoWs
+#    template:
+#      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
+#      - "Atomizer build: %{result} in %{duration}"
+#      - "To package Atomizer, please make a small modification to BioNetGen:"
+#      - "Goto: https://github.com/RuleWorld/bionetgen"
+#      - "Build details:  %{build_url} "
 
 script: make; make install; make test;

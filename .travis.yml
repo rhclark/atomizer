@@ -25,8 +25,25 @@ cache: pip
 before_install:
 - source osx_install.sh
 - sudo -H pip install -U pip wheel
-before_deploy:
-- cd dist; python changeFilename.py; cd ..
+
+
+#before_deploy:
+#- cd dist; python changeFilename.py; cd ..
+
+
+script: make; make install; make test;
+
+ 
+notifications:
+  slack: 
+    rooms:    
+      - faederlab:tEor7269wGs9ylzYYu7hVGq9#build-results
+    template:
+      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
+      - "Atomizer build: %{result} in %{duration}"
+      - "To package Atomizer, please make a small modification to BioNetGen:"
+      - "Goto: https://github.com/RuleWorld/bionetgen"
+      - "Build details:  %{build_url} "
 
 
 
@@ -40,18 +57,3 @@ before_deploy:
 #  local_dir: dist
 #  on:
 #all_branches: true
-
- 
-notifications:
-  slack: 
-    rooms:    
-      - faederlab:tEor7269wGs9ylzYYu7hVGq9#build-results
-#      - faederlab:l0waIGp58v8ZV74N7QmXGoWs
-    template:
-      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
-      - "Atomizer build: %{result} in %{duration}"
-      - "To package Atomizer, please make a small modification to BioNetGen:"
-      - "Goto: https://github.com/RuleWorld/bionetgen"
-      - "Build details:  %{build_url} "
-
-script: make; make install; make test;

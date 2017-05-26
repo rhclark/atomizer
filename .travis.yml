@@ -25,20 +25,28 @@ before_deploy:
 - cd dist; python changeFilename.py; cd ..
 
 
-deploy:
-  provider: gcs
-  access_key_id: GOOGHK4SCMDVVDNXWLUF 	
-  secret_access_key: 5+9g20s/y5pwm1Pt22RVb60pD8bNXqPgDLM6cs9m 	
-  bucket: travis-rhclark-sbmltranslator
-  skip_cleanup: true
-  acl: public_read
-  local_dir: dist
-  on:
-all_branches: true
+
+#deploy:
+#  provider: gcs
+#  access_key_id: GOOGHK4SCMDVVDNXWLUF 	
+#  secret_access_key: 5+9g20s/y5pwm1Pt22RVb60pD8bNXqPgDLM6cs9m 	
+#  bucket: travis-rhclark-sbmltranslator
+#  skip_cleanup: true
+#  acl: public_read
+#  local_dir: dist
+#  on:
+#all_branches: true
 
  
 notifications:
-  slack: faederlab:l0waIGp58v8ZV74N7QmXGoWs
-
+  slack: 
+    rooms:
+      - faederlab:l0waIGp58v8ZV74N7QmXGoWs
+    template:
+      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
+      - "NFsim build: %{result} in %{duration}"
+      - "To package NFsim, please make a small modification to BioNetGen:"
+      - "Goto: https://github.com/RuleWorld/bionetgen"
+      - "Build details:  %{build_url} "
 
 script: make; make install; make test;

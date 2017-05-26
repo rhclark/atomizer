@@ -9,6 +9,7 @@ python:
 addons:
   apt:
     packages:
+    - perl
     - python-pip
     - python-dev
     - python-numpy
@@ -33,6 +34,8 @@ before_install:
 
 script: make; make install; make test;
 
+after_success:
+  - pwd
  
 notifications:
   slack: 

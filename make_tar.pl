@@ -36,26 +36,27 @@ GetOptions( 'help|h'        => sub { display_help(); exit(0); },
 
 
 print "Platform: $platform\n";
-system("pwd");
+#  system("pwd");
 
-exit;
 
 
 my $zip_type  = '';
 my $travis_os = '';
 if ($platform eq "linux") {
   $zip_type = ".tar.gz";  $travis_os = "Linux";
-  my $archive_file = "./dist/NFsim-source-".$platform.$zip_type;
-  print "\nCreating NFsim source archive:\n";
-  system("tar cvzf ${archive_file}  bin doc models src test tools validate CMakeLists.txt LICENSE.txt README.txt makefile NFsim_manual_v1.12.pdf ");
+  my $archive_file = "./dist/Atomizer-source-".$platform.$zip_type;
+
+  print "\nCreating Atomizer source archive:\n";
+  system("tar cvzf ${archive_file}  SBML_parser XMLExamples config gml2sbgn reactionDefinitions stats test utils Makefile requirements.txt twistedServer.py ");
   system("ls -lt dist");
 
 } else {
   if ($platform eq "osx") {
   $zip_type = ".tar.gz";  $travis_os = "MacOSX";
-  my $archive_file = "./dist/NFsim-source-".$platform.$zip_type;
-  print "\nCreating NFsim source archive:\n";
-  system("tar cvzf ${archive_file}  bin doc models src test tools validate CMakeLists.txt LICENSE.txt README.txt makefile NFsim_manual_v1.12.pdf ");
+  my $archive_file = "./dist/Atomizer-source-".$platform.$zip_type;
+
+  print "\nCreating Atomizer source archive:\n";
+  system("tar cvzf ${archive_file}  SBML_parser XMLExamples config gml2sbgn reactionDefinitions stats test utils Makefile requirements.txt twistedServer.py ");
   system("ls -lt dist");
 
   } else {
@@ -67,7 +68,6 @@ if ($platform eq "linux") {
     }
   }
 }
-
 
 exit;
 

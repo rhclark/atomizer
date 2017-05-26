@@ -49,7 +49,6 @@ notifications:
       - "Build details:  %{build_url} "
 
 
-
 #deploy:
 #  provider: gcs
 #  access_key_id: GOOGHK4SCMDVVDNXWLUF 	

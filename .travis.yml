@@ -35,7 +35,8 @@ before_install:
 script: make; make install; make test;
 
 after_success:
-  - pwd
+  - perl make_tar.pl --platform $TRAVIS_OS_NAME
+
  
 notifications:
   slack: 

@@ -36,8 +36,6 @@ GetOptions( 'help|h'        => sub { display_help(); exit(0); },
 
 
 print "Platform: $platform\n";
-#  system("pwd");
-
 
 
 my $zip_type  = '';

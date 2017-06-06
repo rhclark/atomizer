@@ -37,7 +37,7 @@ env:
 #- cd dist; python changeFilename.py; cd ..
 
 
-script: make; make install; make test; cp ./dist/sbmlTranslator ./dist/sbmlTranslator-$TRAVIS_OS_NAME
+script: make; make install; make test; cp ./dist/sbmlTranslator ./dist/sbmlTranslator-$TRAVIS_OS_NAME ;  ls ./dist
 
 after_success:
   - perl make_tar.pl --platform $TRAVIS_OS_NAME

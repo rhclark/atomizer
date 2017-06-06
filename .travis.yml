@@ -40,7 +40,7 @@ env:
 script: make; make install; make test; cp ./dist/sbmlTranslator ./dist/sbmlTranslator-$TRAVIS_OS_NAME ;  ls ./dist
 
 deploy:
-	skip_cleanup: true
+   skip_cleanup: true
 
 
 after_success:

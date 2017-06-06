@@ -39,6 +39,10 @@ env:
 
 script: make; make install; make test; cp ./dist/sbmlTranslator ./dist/sbmlTranslator-$TRAVIS_OS_NAME ;  ls ./dist
 
+deploy:
+	skip_cleanup: true
+
+
 after_success:
   - perl make_tar.pl --platform $TRAVIS_OS_NAME
   - "curl -T ./dist/sbmlTranslator-$TRAVIS_OS_NAME         -u $FTP_USER:$FTP_PASSWORD ftp://ftp.midcapsignals.com/midcap/junk/"  

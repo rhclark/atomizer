@@ -52,7 +52,7 @@ build_script:
   - make test
 
 artifacts:
- - path: dist\sbmlTranslator.exe
+ - path: '.\dist\sbmlTranslator.exe'
    name: sbmlTranslator
    
    
@@ -66,9 +66,8 @@ artifacts:
 deploy:
   provider: FTP
   protocol: ftp
-  host: ftp.midcapsignals.com
+  host: ftp.midcapsignals.com/midcap/d_appveyor/
   username: roberthclark
   password:
     secure: K22E4pSAup6/htlGmoSBMw==
-  artifact: sbmlTranslator
 

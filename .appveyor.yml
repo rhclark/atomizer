@@ -57,6 +57,9 @@ artifacts:
  - path: '.\dist\sbmlTranslator.exe'
    name: sbmlTranslator
    
+ - path: '.\sbmlTranslator.exe'
+   name: sbmlTranslatorWin32
+   
    
 notifications:
   - provider: Slack

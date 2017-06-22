@@ -35,7 +35,7 @@ GetOptions( 'help|h'        => sub { display_help(); exit(0); },
             'platform=s'    => \$platform);
 
 
-print "Platform: $platform\n";
+    print " In perl  platform = ".$platform."\n";
 
 my $zip_type  = '';
 my $travis_os = '';
@@ -58,23 +58,25 @@ if ($platform eq "linux") {
 
   } else {
   
-    print " In perl  platform = ".$platform."\n";
-  
     if ($platform eq "Win32") {
       $zip_type = ".zip";  $travis_os = "Win32";
-      system('copy  .\build\NFsim.exe  .\build\NFsim-Win32.exe');
-      my $archive_file = "build/NFsim-source-Win32".$zip_type;
-      print "\nCreating NFsim".$platform.".exe source archive:\n";
+      system('copy  .\Win32_archive\sbmlTranslator.exe  .\dist\sbmlTranslator-Win32.exe');      
+      my $archive_file = "./dist/NFsim-source-Win32".$zip_type;
+      
+      print "\nCreating Atomizer-".$platform.".exe source archive:\n";
       system("7z a  ${archive_file} SBMLparser XMLExamples config gml2sbgn reactionDefinitions stats test utils Makefile requirements.txt twistedServer.py ");
       system("dir ${archive_file}");
+      
     } else {
       if ($platform eq "Win64") {
         $zip_type = ".zip";  $travis_os = "Win64";
-        system('copy  .\build\NFsim.exe  .\build\NFsim-Win64.exe');
-        my $archive_file = "./build/NFsim-source-Win64".$zip_type;
-        print "\nCreating NFsim".$platform.".exe source archive:\n";
+        system('copy  .\dist\sbmlTranslator.exe  .\dist\sbmlTranslator-Win64.exe');
+        my $archive_file = "./dist/Atomizer-source-Win64".$zip_type;
+        
+        print "\nCreating Atomizer-".$platform.".exe source archive:\n";
         system("7z a  ${archive_file} SBMLparser XMLExamples config gml2sbgn reactionDefinitions stats test utils Makefile requirements.txt twistedServer.py ");
         system("dir ${archive_file}");
+        
       } else {
         print "Invalid platform: ".$platform."\n";
         exit;

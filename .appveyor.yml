@@ -56,12 +56,18 @@ artifacts:
    name: sbmlTranslator
    
    
-#notifications:
-#  - provider: Slack
-#    auth_token:
-#      secure: jN4Fas2b8/Z1yNInrC6yWZf1sHzA5M7M/wANf+O4nRQLRqNqLsmNFGMNusaS+adFyS0kz3TfGBtLjAEKeh84jw==
-#    channel: build-results
-
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: Ee9fFcoV1ABKmTKowaok5sUiOlRSGzCpWtwNIBFC0PpauqK+/mEt9KjeUXWsb7J7uFcAb1CKo7y/FFhHEJH6pWGMn5oV283uVnqZAB8Chac=
+    template: 
+       "<{{buildUrl}}|{{projectName}} build {{status}}> on {{commitDate}}:_{{commitMessage}}_\n
+        Build: {{buildVersion}} (<{{commitUrl}}|{{commitId}}>)   Author: {{commitAuthor}}\n         
+        Download Executable Here:\n
+        <https://rawgit.com/RuleWorld/Atomizer/master/.Atomizer_Beta.html|https://rawgit.com/RuleWorld/Atomizer/master/.Atomizer_Beta.html>\n
+        Build Details:\n
+        <{{buildUrl}}|{{buildUrl}}>"
+   
 
 deploy:
   provider: FTP

@@ -60,6 +60,9 @@ artifacts:
  - path: '.\sbmlTranslator.exe'
    name: sbmlTranslatorWin32
    
+ - path: '.\dist\Atomizer-source-Win*.zip'
+   name: AtomizerZips
+   
    
 notifications:
   - provider: Slack

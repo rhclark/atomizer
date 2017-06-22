@@ -50,6 +50,8 @@ build_script:
   - make
   - make install
   - make test
+  - perl .make_tar.pl  --platform Win64  
+  - perl .make_tar.pl  --platform Win32  
 
 artifacts:
  - path: '.\dist\sbmlTranslator.exe'

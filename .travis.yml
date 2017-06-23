@@ -57,8 +57,8 @@ notifications:
     rooms:    
       - faederlab:tEor7269wGs9ylzYYu7hVGq9#build-results
     template:
-      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
       - "Atomizer build: %{result} in %{duration}"
+      - "Build: <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) Author: %{author}"      
       - "To package Atomizer, please make a small modification to BioNetGen:"
       - "Goto: https://github.com/RuleWorld/bionetgen"
       - "Build details:  %{build_url} "

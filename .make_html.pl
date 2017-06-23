@@ -122,12 +122,12 @@ open(FNEW,">$ofile_name");
     print FNEW           "sbmlTranslator-Win64.exe</a>\n";
   }
   if ($travis_os eq 'osx') {
-    print FNEW "<a href=\"sbmlTranslator-MacOSX\">\n";
-    print FNEW           "sbmlTranslator-MacOSX</a>\n";
+    print FNEW "<a href=\"sbmlTranslator-osx\">\n";
+    print FNEW           "sbmlTranslator-osx</a>\n";
   }
   if ($travis_os eq 'linux') {
-    print FNEW "<a href=\"sbmlTranslator-Linux\">\n";
-    print FNEW           "sbmlTranslator-Linux</a>\n";
+    print FNEW "<a href=\"sbmlTranslator-linux\">\n";
+    print FNEW           "sbmlTranslator-linux</a>\n";
   }
   print FNEW "</h1></center>\n";
   print FNEW "<center>\n";
@@ -137,7 +137,7 @@ open(FNEW,">$ofile_name");
   if (($travis_os eq "linux") or ($travis_os eq "osx")) {
     print FNEW "<br>\n";
     print FNEW "<center> Dont forget that after doing the download, you will need to do: \n";
-    print FNEW "<font color=\"red\"> chmod +x NFsim-".$travis_os."</center>";
+    print FNEW "<font color=\"red\"> chmod +x sbmlTranslator-".$travis_os."</center>";
   }
   print FNEW "<br>\n";
   print FNEW "<br>\n";

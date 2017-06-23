@@ -61,7 +61,7 @@ if ($platform eq "linux") {
     if ($platform eq "Win32") {
       $zip_type = ".zip";  $travis_os = "Win32";
       system('copy  .\Win32_archive\sbmlTranslator.exe  .\dist\sbmlTranslator-Win32.exe');      
-      my $archive_file = "./dist/NFsim-source-Win32".$zip_type;
+      my $archive_file = "./dist/Atomizer-source-Win32".$zip_type;
       
       print "\nCreating Atomizer-".$platform.".exe source archive:\n";
       system("7z a  ${archive_file} SBMLparser XMLExamples config gml2sbgn reactionDefinitions stats test utils Makefile requirements.txt twistedServer.py ");

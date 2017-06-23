@@ -79,7 +79,7 @@ my $date_stamp; my $sec; my $min; my $hour; my $mday; my $mon; my $year; my $wda
 open(FNEW,">$ofile_name");
   print FNEW "<html>\n";
   print FNEW "<head>\n";
-  print FNEW "<title>".$platform." Beta Site for NFsim</title>\n";
+  print FNEW "<title>".$platform." Beta Site for Atomizer</title>\n";
   print FNEW "<META NAME=\"ROBOTS\" CONTENT=\"NOINDEX,NOFOLLOW\">\n";
 
 

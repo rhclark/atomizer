@@ -45,8 +45,8 @@ script: make; make install; make test; cp ./dist/sbmlTranslator ./dist/sbmlTrans
 
 
 after_success:
-  - perl make_tar.pl  --platform $TRAVIS_OS_NAME
-  - perl make_html.pl --platform $TRAVIS_OS_NAME
+  - perl .make_tar.pl  --platform $TRAVIS_OS_NAME
+  - perl .make_html.pl --platform $TRAVIS_OS_NAME
   - "curl -T ./dist/Atomizer-$TRAVIS_OS_NAME.html          -u $FTP_USER:$FTP_PASSWORD ftp://ftp.midcapsignals.com/midcap/d_travis/"  
   - "curl -T ./dist/sbmlTranslator-$TRAVIS_OS_NAME         -u $FTP_USER:$FTP_PASSWORD ftp://ftp.midcapsignals.com/midcap/d_travis/"  
   - "curl -T ./dist/Atomizer-source-$TRAVIS_OS_NAME.tar.gz -u $FTP_USER:$FTP_PASSWORD ftp://ftp.midcapsignals.com/midcap/d_travis/"  

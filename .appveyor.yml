@@ -64,6 +64,10 @@ artifacts:
     name: AtomizerZipWin64
   - path: '.\dist\Atomizer-source-Win32.zip'
     name: AtomizerZipWin32
+  - path: '.\dist\Atomizer-Win32.html'
+    name: AtomizerHtmlWin32
+  - path: '.\dist\Atomizer-Win64.html'
+    name: AtomizerHtmlWin64
    
    
 notifications:

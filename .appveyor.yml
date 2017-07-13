@@ -52,8 +52,6 @@ build_script:
   - make test
   - perl .make_tar.pl   --platform Win64  
   - perl .make_tar.pl   --platform Win32
-  - perl .make_html.pl  --platform Win64
-  - perl .make_html.pl  --platform Win32
 
 artifacts:
   - path: '.\dist\sbmlTranslator.exe'
@@ -64,10 +62,6 @@ artifacts:
     name: AtomizerZipWin64
   - path: '.\dist\Atomizer-source-Win32.zip'
     name: AtomizerZipWin32
-  - path: '.\dist\Atomizer-Win32.html'
-    name: AtomizerHtmlWin32
-  - path: '.\dist\Atomizer-Win64.html'
-    name: AtomizerHtmlWin64
    
    
 notifications:

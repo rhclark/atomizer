@@ -79,7 +79,7 @@ notifications:
 
 deploy:
   provider: FTP
-  active_mode: true
+  active_mode: false
   protocol: ftp
   host: ftp.drivehq.com/d_data/d_appveyor
   username: 15260

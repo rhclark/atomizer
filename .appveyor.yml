@@ -52,8 +52,9 @@ build_script:
   - make test
   - perl .make_tar.pl   --platform Win64  
   - perl .make_tar.pl   --platform Win32
-  - CMD: move .\dist\sbmlTranslator.exe  .\dist\sbmlTranslator64.exe  
-  - CMD: move .\sbmlTranslator.exe       .\dist\sbmlTranslator32.exe  
+  - dir
+  - cmd: move .\dist\sbmlTranslator.exe  .\dist\sbmlTranslator64.exe  
+  - cmd: move .\sbmlTranslator.exe       .\dist\sbmlTranslator32.exe  
 
 artifacts:
   - path: '.\dist\sbmlTranslator64.exe'

@@ -4,6 +4,10 @@ os:
 
 
 language: c++
+# The dist: precise statement indicates that Ubuntu version 12 should be used.  Since this YAML file was developed using
+# Ubuntu 12, we'll add the statement.  If you remove the statement, it will permit the new default, Ubuntu ver. 14, to be
+# used.  I assume also, that this statement is ignored for the MacOS platform.
+dist: precise
 python:
   - '2.7'
 addons:

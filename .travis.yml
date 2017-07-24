@@ -78,4 +78,4 @@ notifications:
 #  acl: public_read
 #  local_dir: dist
 #  on:
-#all_branches: true
+#  all_branches: true
